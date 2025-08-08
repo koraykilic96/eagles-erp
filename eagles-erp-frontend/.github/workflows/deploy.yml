@@ -3,8 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'eagles-erp-frontend/**'
   pull_request:
     branches: [ main ]
+    paths:
+      - 'eagles-erp-frontend/**'
 
 jobs:
   build-and-deploy:
@@ -19,16 +23,19 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
+        cache-dependency-path: 'eagles-erp-frontend/package-lock.json'
         
     - name: Install dependencies
       run: npm ci
+      working-directory: ./eagles-erp-frontend
       
     - name: Build
       run: npm run build
+      working-directory: ./eagles-erp-frontend
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: ./eagles-erp-frontend/dist
