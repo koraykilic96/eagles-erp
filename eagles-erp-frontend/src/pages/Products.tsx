@@ -459,7 +459,7 @@ const Products: React.FC = () => {
             <InputNumber
               style={{ width: '100%' }}
               formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-              parser={value => value!.replace(/\$\s?|(,*)/g, '')}
+              parser={(value: any) => value!.replace(/\$\s?|(,*)/g, '')}
               min={0}
               placeholder="0.00"
             />

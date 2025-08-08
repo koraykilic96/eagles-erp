@@ -1,69 +1,111 @@
-# React + TypeScript + Vite
+# Eagles ERP Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React tabanlı ERP sistemi frontend uygulaması.
 
-Currently, two official plugins are available:
+## 🚀 Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern UI/UX**: Ant Design ile geliştirilmiş modern arayüz
+- **Responsive Design**: Tüm cihazlarda uyumlu tasarım
+- **Vessel Management**: Gemi yönetimi ve takip sistemi
+- **Dashboard**: Kapsamlı dashboard ve analitik
+- **Inventory Management**: Envanter yönetimi
+- **Certificate Management**: Sertifika takip sistemi
+- **Safety Management**: Güvenlik yönetimi
+- **Maintenance Tracking**: Bakım takip sistemi
 
-## Expanding the ESLint configuration
+## 🛠️ Teknolojiler
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - Modern React hooks ve functional components
+- **TypeScript** - Tip güvenliği
+- **Vite** - Hızlı build tool
+- **Ant Design** - UI component library
+- **React Router** - Client-side routing
+- **Leaflet** - Harita entegrasyonu
+- **React DnD** - Drag & drop functionality
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Kurulum
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+```bash
+# Dependencies kurulumu
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Development server başlatma
+npm run dev
+
+# Production build
+npm run build
+
+# Build preview
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🌐 Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### GitHub Pages
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Proje otomatik olarak GitHub Pages'e deploy edilir:
+
+1. Main branch'e push yapın
+2. GitHub Actions otomatik olarak build alır ve deploy eder
+3. `https://[username].github.io/eagles-erp-frontend/` adresinden erişebilirsiniz
+
+### Manuel Deploy
+
+```bash
+# Build alın
+npm run build
+
+# Dist klasörünü web sunucunuza yükleyin
 ```
+
+## 📁 Proje Yapısı
+
+```
+src/
+├── components/     # Reusable components
+├── pages/         # Page components
+├── hooks/         # Custom hooks
+├── types/         # TypeScript type definitions
+├── data/          # Mock data
+└── assets/        # Static assets
+```
+
+## 🔧 Geliştirme
+
+### Yeni Sayfa Ekleme
+
+1. `src/pages/` klasörüne yeni component ekleyin
+2. `src/App.tsx` dosyasında route tanımlayın
+3. Navigation menüsüne ekleyin
+
+### Component Geliştirme
+
+- Ant Design component'lerini kullanın
+- TypeScript ile tip güvenliği sağlayın
+- Responsive tasarım prensiplerini uygulayın
+
+## 📊 Build Analizi
+
+Son build'de:
+- **Bundle Size**: ~1.5MB (gzipped: ~460KB)
+- **Chunks**: Vendor, Antd, Router ayrı chunk'lar
+- **Assets**: Optimized images ve CSS
+
+## 🤝 Katkıda Bulunma
+
+1. Fork yapın
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Commit yapın (`git commit -m 'Add amazing feature'`)
+4. Push yapın (`git push origin feature/amazing-feature`)
+5. Pull Request açın
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.
+
+## 🆘 Destek
+
+Herhangi bir sorun yaşarsanız:
+1. GitHub Issues bölümünü kontrol edin
+2. Yeni issue açın
+3. Detaylı açıklama ve repro steps ekleyin

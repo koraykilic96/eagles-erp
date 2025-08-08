@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, List, Tag, Button, Space, Typography, Badge } from 'antd';
-import { 
-  ExclamationCircleOutlined, 
-  CloseOutlined, 
+import { Modal, List, Tag, Button, Typography, Badge } from 'antd';
+import {
+  ExclamationCircleOutlined,
   BellOutlined,
-  ClockCircleOutlined,
-  WarningOutlined,
   CheckCircleOutlined,
-  SyncOutlined
+  ClockCircleOutlined,
 } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
-const { Text, Title } = Typography;
+const { Text } = Typography;
 
 interface EmergencyNotification {
   id: string;
@@ -29,9 +26,9 @@ interface EmergencyNotificationPopupProps {
   onClose: () => void;
 }
 
-const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({ 
-  visible, 
-  onClose 
+const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
+  visible,
+  onClose
 }) => {
   const navigate = useNavigate();
   const [notifications, setNotifications] = useState<EmergencyNotification[]>([]);
@@ -97,8 +94,8 @@ const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
     switch (module) {
       case 'Certificate': return <CheckCircleOutlined style={{ color: '#10b981' }} />;
       case 'Deficiency': return <ExclamationCircleOutlined style={{ color: '#ef4444' }} />;
-      case 'Maintenance': return <SyncOutlined style={{ color: '#f59e0b' }} />;
-      case 'Risk Assessment': return <WarningOutlined style={{ color: '#8b5cf6' }} />;
+      case 'Maintenance': return <BellOutlined style={{ color: '#f59e0b' }} />;
+      case 'Risk Assessment': return <ExclamationCircleOutlined style={{ color: '#8b5cf6' }} />;
       default: return <BellOutlined />;
     }
   };
@@ -140,12 +137,12 @@ const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
           <span style={{ color: '#ef4444', fontWeight: 'bold', fontSize: '18px' }}>
             Emergency Notifications
           </span>
-          <Badge 
-            count={notifications.length} 
-            style={{ 
+          <Badge
+            count={notifications.length}
+            style={{
               backgroundColor: '#ef4444',
               color: 'white'
-            }} 
+            }}
           />
         </div>
       }
@@ -155,11 +152,11 @@ const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
         <Button key="close" onClick={onClose} style={{ border: '1px solid #d1d5db' }}>
           Close
         </Button>,
-        <Button 
-          key="viewAll" 
-          type="primary" 
+        <Button
+          key="viewAll"
+          type="primary"
           onClick={handleViewAll}
-          style={{ 
+          style={{
             background: '#ef4444',
             border: 'none'
           }}
@@ -171,7 +168,7 @@ const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
       style={{ top: 50 }}
       styles={{
         body: {
-          maxHeight: '400px', 
+          maxHeight: '400px',
           overflowY: 'auto',
           padding: '16px'
         }
@@ -235,13 +232,13 @@ const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
                 <Text style={{ color: '#374151', fontSize: '13px', fontWeight: '500' }}>
                   {item.module}
                 </Text>
-                <Badge 
-                  count={item.count} 
-                  style={{ 
+                <Badge
+                  count={item.count}
+                  style={{
                     backgroundColor: item.count > 50 ? '#ef4444' : item.count > 20 ? '#f59e0b' : '#10b981',
                     color: 'white',
                     fontSize: '10px'
-                  }} 
+                  }}
                 />
               </div>
 
@@ -259,8 +256,8 @@ const EmergencyNotificationPopup: React.FC<EmergencyNotificationPopupProps> = ({
       />
 
       {notifications.length === 0 && (
-        <div style={{ 
-          textAlign: 'center', 
+        <div style={{
+          textAlign: 'center',
           padding: '40px 20px',
           color: '#64748b'
         }}>

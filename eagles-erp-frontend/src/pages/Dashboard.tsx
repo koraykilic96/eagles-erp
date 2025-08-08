@@ -412,11 +412,11 @@ const Dashboard: React.FC = () => {
                     titleRender={(nodeData) => (
                       <div style={{ 
                         padding: '8px 0', 
-                        borderBottom: nodeData.isLeaf ? 'none' : '1px solid #f0f0f0',
+                        borderBottom: (nodeData as any).isLeaf ? 'none' : '1px solid #f0f0f0',
                         width: '100%',
                         display: 'flex',
                         alignItems: 'center',
-                        cursor: nodeData.isLeaf ? 'pointer' : 'default'
+                        cursor: (nodeData as any).isLeaf ? 'pointer' : 'default'
                       }}>
                         {nodeData.title}
                       </div>

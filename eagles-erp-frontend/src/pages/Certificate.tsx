@@ -1,14 +1,74 @@
-import React, { useState, useEffect } from 'react';
-import { Table, Card, Tag, Space, Input, Select, Button, Badge } from 'antd';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 import {
-  SearchOutlined,
+  Table,
+  Card,
+  Tag,
+  Space,
+  Button,
+  Input,
+  Select,
+  Badge,
+  Row,
+  Col,
+  Statistic,
+  List,
+  Avatar,
+  Divider,
+  Tabs,
+  Upload,
+  message,
+  Popconfirm,
+  Switch,
+  InputNumber,
+  TimePicker,
+  Checkbox,
+  Radio,
+  Slider,
+  Rate,
+  Cascader,
+  TreeSelect,
+  Transfer,
+  Mentions,
+  AutoComplete,
+  Affix,
+  Anchor,
+  BackTop,
+  ConfigProvider,
+  Drawer,
+  Dropdown,
+  Menu,
+  Pagination,
+  Popover,
+  Skeleton,
+  Spin,
+  Steps,
+  Timeline,
+  Tree,
+  Empty,
+  Result,
+  Descriptions,
+  Collapse,
+  Carousel,
+  Image,
+  QRCode,
+  Segmented,
+  FloatButton,
+  Watermark,
+  Tour,
+  App,
+  Flex,
+  theme,
+  notification
+} from 'antd';
+import {
+  ClockCircleOutlined,
+  ExclamationCircleOutlined,
   CheckCircleOutlined,
   FilterOutlined,
-  FileTextOutlined,
-  ClockCircleOutlined,
-  ExclamationCircleOutlined
+  SearchOutlined,
+  FileTextOutlined
 } from '@ant-design/icons';
+import { useLocation } from 'react-router-dom';
 
 const { Search } = Input;
 const { Option } = Select;

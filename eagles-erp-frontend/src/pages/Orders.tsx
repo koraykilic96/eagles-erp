@@ -138,7 +138,7 @@ const Orders: React.FC = () => {
             size="small"
             value={status}
             style={{ width: 120 }}
-            onChange={(value) => handleStatusUpdate(record.id, value)}
+            onChange={(value) => handleStatusUpdate(record.id, value as any)}
           >
             <Option value="pending">Beklemede</Option>
             <Option value="processing">İşleniyor</Option>
